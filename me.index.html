@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Me</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6a00, #f06);
+            text-align: center;
+            padding: 100px 20px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+            transform: skewY(-6deg);
+            margin-bottom: 40px;
+            animation: fadeInHeader 1s ease-out;
+        }
+
+        header h1 {
+            font-size: 4em;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.3em;
+            font-weight: 300;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Header Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateX(-200px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInHeader {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            margin-top: 30px;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Skills section */
+        .skills {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .skill-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #ff6a00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            color: #fff;
+            position: relative;
+            margin: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-circle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Projects section */
+        .projects {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 60px;
+        }
+
+        .project-card {
+            width: 300px;
+            height: 400px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card .content {
+            padding: 15px;
+        }
+
+        .project-card .content h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .project-card .content p {
+            font-size: 1.1em;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background-color: #ff6a00;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 60px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1em;
+        }
+
+        .contact-form button {
+            background-color: #fff;
+            color: #ff6a00;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #ffbc00;
+        }
+
+        footer {
+            background-color: #1e2a47;
+            color: #fff;
+            text-align: center;
+            padding: 25px;
+            font-size: 1.1em;
+            box-shadow: 0 -6px 25px rgba(0, 0, 0, 0.1);
+            animation: fadeInFooter 2s ease-out;
+        }
+
+        @keyframes fadeInFooter {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Footer Links */
+        .social-links a {
+            color: #fff;
+            font-size: 1.5em;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff6a00;
+        }
+
+        /* Scroll Animation */
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>About Me</h1>
+    <p>Web Developer | Passionate Coder | Tech Enthusiast</p>
+</header>
+
+<div class="container">
+    <section>
+        <h2 class="section-title fade-in-on-scroll">Who Am I?</h2>
+        <p>Hi! I'm a developer who loves working with JavaScript, Python, and other technologies. I enjoy building websites and creating innovative solutions to real-world problems.</p>
+    </section>
+
+    <section>
+        <h2 class="section-title fade-in-on-scroll">My Skills</h2>
+        <div class="skills">
+            <div class="skill-circle fade-in-on-scroll">
+                <div class="circle-text"><span>JS</span><span>85%</span></div>
+            </div>
+            <div class="skill-circle fade-in-on-scroll">
+                <div class="circle-text"><span>Python</span><span>75%</span></div>
+            </div>
+            <div class="skill-circle fade-in-on-scroll">
+                <div class="circle-text"><span>HTML/CSS</span><span>90%</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title fade-in-on-scroll">My Projects</h2>
+        <div class="projects">
+            <div class="project-card fade-in-on-scroll">
+                <div class="content">
+                    <h3>Innovative Web Creations</h3>
+                    <p>Working on creating innovative and efficient web solutions, enhancing user experience, and optimizing workflows for better performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form">
+        <h2>Contact Me</h2>
+        <form action="#" method="post">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</div>
+
+<footer>
+    <p>Contact me at: <a href="mailto:your-email@example.com">zinniscrybabay@gmail.com
+    </a></p>
+</footer>
+
+<script>
+    window.addEventListener('scroll', () => {
+        const elements = document.querySelectorAll('.fade-in-on-scroll');
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                element.classList.add('visible');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
